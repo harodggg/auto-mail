@@ -3,6 +3,7 @@
 
 import imaplib
 import outlook.login as outlook
+import gmail.login as gmail
 import config
 
 imapserver = 'outlook.office365.com'
@@ -13,7 +14,7 @@ def main():
     conn = imaplib.IMAP4_SSL(imapserver)
     conn.login(username,password)
     conn.list()
-    conn.select('INBOX')    #选择收件箱（默认）
+    conn.select('INBOX')
     result , dataid = conn.uid ('search' , None , "ALL" )
     mailidlist = dataid[0].split()
     print(mailidlist)
@@ -21,8 +22,6 @@ def main():
 if __name__ == '__main__':
 #    cookies = outlook.get_cookie()
 #    print(cookies)
-    print(config.gmail_user)
-    print(config.gmail_server)
-    print(config.gmail_passwd)
+    gmail.logging(config.GMAIL_USER,config.GMAIL_PASSWD)
 
 
