@@ -21,5 +21,6 @@ if __name__ == '__main__':
     print('start')
     cookies = outlook.get_cookie()
     print(cookies)
+    print('test')
 
 
