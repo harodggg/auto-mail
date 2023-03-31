@@ -3,6 +3,7 @@
 
 import imaplib
 import outlook.login as outlook
+import config
 
 imapserver = 'outlook.office365.com'
 password="bqwK6dvW"
@@ -18,9 +19,10 @@ def main():
     print(mailidlist)
 
 if __name__ == '__main__':
-    print('start')
-    cookies = outlook.get_cookie()
-    print(cookies)
-    print('test')
+#    cookies = outlook.get_cookie()
+#    print(cookies)
+    print(config.gmail_user)
+    print(config.gmail_server)
+    print(config.gmail_passwd)
 
 
