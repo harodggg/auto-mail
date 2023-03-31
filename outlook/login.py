@@ -14,5 +14,15 @@ def get_cookie():
     cookie = session.cookies.get_dict()
     return cookie
 
+def loging_email(cookie,login,passwd):
+    url = 'https://login.live.com/ppsecure/post.srf'
+    headers = {
+        'User-Agent': ua.random
+    }
+    data = {
+        'login': login,
+        'passwd': passwd}
+    session = requests.Session()
+    session.post(url, headers=headers, data=data, cookies=cookie)
 
 
