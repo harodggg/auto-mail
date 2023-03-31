@@ -6,7 +6,7 @@ gmail_server = "smtp.gmail.com"
 
 # Gmail account
 gmail_user = "haroldtiansheng@gmail.com"
-passwd = "password":
+passwd = "password"
 
 # Outlook server
 outlook_server = "smtp-mail.outlook.com"
