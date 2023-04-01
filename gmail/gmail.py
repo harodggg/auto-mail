@@ -8,7 +8,7 @@ class Gmail:
     def __init__(self,username,passwd):
         self.username = username
         self.passwd = passwd
-        self.server = NULL
+        self.server = None
 
     def login(self):
         print("%s,Logging in..." % self.username)
@@ -22,10 +22,11 @@ class Gmail:
             print(e)
             return False
 
-    def get_all_email(self):
+    def get_all_emails(self):
         print("Getting all email...")
         try:
-            self.server.list()
+            list = self.server.list()
+            print(list)
             print("Get all email success")
             return True
         except Exception as e:

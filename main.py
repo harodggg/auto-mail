@@ -3,7 +3,7 @@
 
 import imaplib
 import outlook.login as outlook
-import gmail.login as gmail
+import gmail.gmail as gmail
 import config
 
 imapserver = 'outlook.office365.com'
@@ -22,6 +22,9 @@ def main():
 if __name__ == '__main__':
 #    cookies = outlook.get_cookie()
 #    print(cookies)
-    gmail.logging(config.GMAIL_USER,config.GMAIL_PASSWD)
+    gmail_client = gmail.Gmail(config.GMAIL_USER, config.GMAIL_PASSWD)
+    gmail_client.login()
+    gmail_client.get_all_emails()
+
 
 
